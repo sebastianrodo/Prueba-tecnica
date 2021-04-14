@@ -1,11 +1,7 @@
 date_of_birth,name,credit_card_number,address,phone_number,email
 2004-06-06, Shirlez_Dominguez, 5555555555554444, 28st, (+57) 320 432 05 09, shirlez@gmail.com
-
-
-
-Shirlez_Dominguez,  2004-06-06, (+57) 320 432 05 09, 28st, 5555555555554444, shirlez@gmail.com
-Alberto-Jose, 20020728,  (+57) 320-432-05-09, 22st, 379304244903836, alb2@gmail.com
-Susana, 20000128,  (+2) 320-432-05-09, 23st, 6011310764051683, susana@gmail.com
-1, 19900328,  (+23) 320 432 05 09, 26st, 4539689983136609, martin@gmail.com
-Alvaro, 1994-07-28,  (+05) 320-432-05-09, 12st, 5441395643588122, alvaro@gmail.com
+20020728, Alberto-Jose, 379304244903836, 22st, (+57) 320-432-05-09, alb2@gmail.com
+20000128, Susana, 6011310764051683, 23st, (+2) 320-432-05-09, susana@gmail.com
+19900328, 1, 4539689983136609, 26st, (+23) 320 432 05 09, martin@gmail.com
+1994-07-28, Alvaro, 5441395643588122, 12st, (+05) 320-432-05-09, alvaro@gmail.com
 
