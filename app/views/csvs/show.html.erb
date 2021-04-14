@@ -1,0 +1,37 @@
+<%= render "contacts/form" %>
+<center>
+  <h1>Preview "<%= file_name(@csv) %>"</h1><br>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Column 1</th>
+        <th scope="col">Column 2</th>
+        <th scope="col">Column 3</th>
+        <th scope="col">Column 4</th>
+        <th scope="col">Column 5</th>
+        <th scope="col">Column 6</th>
+        <th scope="col">Column 7</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @file_rows.each do |row|%>
+        <tr>
+          <td><%= row[0] %></td>
+          <td><%= row[1] %></td>
+          <td><%= row[2] %></td>
+          <td><%= row[3] %></td>
+          <td><%= row[4] %></td>
+          <td><%= get_credit_card_brand(row[4]) %></td>
+          <td><%= row[5] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</center>
+
+<%= will_paginate @file_rows %>
+
+<%= link_to 'Edit', edit_csv_path(@csv) %> |
+<%= link_to 'Back', csvs_path %>
+

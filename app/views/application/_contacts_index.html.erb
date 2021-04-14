@@ -1,0 +1,33 @@
+<center>
+  <h1>Contacts</h1>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Date of Birth</th>
+        <th>Phone number</th>
+        <th>Address</th>
+        <th>Credit Card Number</th>
+        <th>Credit Card Type</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @contacts.each do |contact| %>
+        <tr>
+          <td><%= contact.name %></td>
+          <td><%= contact.date_of_birth.strftime("%Y %B %e") %></td>
+          <td><%= contact.phone_number %></td>
+          <td><%= contact.address %></td>
+          <td><%= get_four_last_digits(contact.credit_card_number) %></td>
+          <td><%= contact.credit_card_type %></td>
+          <td><%= contact.email%></td>
+        </tr>
+      <%end %>
+    </tbody>
+  </table>
+
+</center>
+
+<%= will_paginate @contacts %>

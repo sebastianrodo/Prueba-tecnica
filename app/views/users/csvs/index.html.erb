@@ -1,0 +1,37 @@
+<%= link_to 'Back to home', root_url, class:"btn btn-secondary btn-sm" %>
+
+<center>
+  <h1>List of CSVS files</h1><br>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">File Name</th>
+        <th scope="col">Estate</th>
+        <th scope="col">Show</th>
+        <th scope="col">Update</th>
+        <th scope="col">Destroy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @csvs.each do |csv| %>
+        <tr>
+          <th scope="row"><%= file_name(csv) %></th>
+          <th class="be-red"><%= csv.aasm.human_state %></th>
+          <td><%= link_to 'Show', csv, class:"btn btn-success" %></td>
+          <td><%= link_to 'Update', edit_csv_path(csv), class:"btn btn-warning" %></td>
+          <td><%= link_to 'Destroy', csv, method: :delete, data: { confirm: 'Are you sure?' },
+            class:"btn btn-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'Upload CSV file', new_csv_path, class:"btn btn-primary" %>
+</center>
+<%= will_paginate @csvs %>
+
+
+
