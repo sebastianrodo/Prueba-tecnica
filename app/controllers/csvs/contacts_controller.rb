@@ -4,7 +4,7 @@ module Csvs
     before_action :set_csv, only: [:create]
     before_action :set_csv_processeing_state, only: [:create]
     after_action :change_csv_state, only: [:create]
-    before_action :valid_contact_owner, only: %i[ index ]
+    before_action :valid_contact_owner, only: [:index]
 
     def index
       @contacts = current_user.contacts.paginate(page: params[:page], per_page: 5)

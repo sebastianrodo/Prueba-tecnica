@@ -31,9 +31,6 @@ class CsvsController < ApplicationController
   end
 
   def update
-
-
-
     respond_to do |format|
       if @csv.update(csv_params)
         format.html { redirect_to @csv, notice: "Csv was successfully updated." }
@@ -48,7 +45,7 @@ class CsvsController < ApplicationController
   def destroy
     @csv.destroy
     respond_to do |format|
-      format.html { redirect_to csvs_url, notice: "Csv was successfully destroyed." }
+      format.html { redirect_to users_csvs_path, notice: "Csv was successfully destroyed." }
       format.json { head :no_content }
     end
   end

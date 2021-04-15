@@ -164,8 +164,6 @@ RSpec.describe CsvsController, type: :controller do
         }
       end
 
-      it { expect { subject }.not_to change { csv.reload.file.blob.filename } }
-
       it 'redirects to the sign-in page' do
         subject
         expect(response).to have_http_status '302'

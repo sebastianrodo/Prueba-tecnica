@@ -11,14 +11,27 @@ RSpec.describe Csvs::ContactsController, type: :controller do
     let(:contact) { create :contact }
     let(:params) { { csv_id: contact.csv_id } }
 
-    before do
-      sign_in contact.user
-      subject
+    context 'successful' do
+      before do
+        sign_in contact.user
+        subject
+      end
+
+      it { expect(assigns(:contacts).size).to eq(1) }
+      it { expect(response).to have_http_status '200' }
+      it { is_expected.to render_template :index }
     end
 
-    it { expect(assigns(:contacts).size).to eq(1) }
-    it { expect(response).to have_http_status '200' }
-    it { is_expected.to render_template :index }
+    context 'expect fail the user not belongs to you' do
+      let(:another_user) { create :user }
+
+      before do
+        sign_in another_user
+        subject
+      end
+
+      it { expect(response).to redirect_to users_contacts_url }
+    end
   end
 
   describe 'POST #create' do
